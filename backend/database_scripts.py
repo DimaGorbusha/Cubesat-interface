@@ -13,7 +13,6 @@ class DB:
         self.DB_connect()
         self.connection.close()
 
-
     def create_table(self):
         self.DB_connect()
         try:
