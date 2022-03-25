@@ -18,7 +18,7 @@ class DB:
         try:
             with self.connection.cursor() as cursor:
                 self.connection.autocommit = True
-                create_tb_query = """CREATE TABLE IF NOT EXISTS tbl_with_tests (
+                sql_create_tb_query = """CREATE TABLE IF NOT EXISTS tbl_with_tests (
                     test_id BIGSERIAL PRIMARY KEY,
                     duration INTEGER, 
                     brh_opn INTEGER, 
@@ -33,8 +33,7 @@ class DB:
                     valve_temp DOUBLE PRECISION, 
                     valve_current DOUBLE PRECISION, 
                     heating_current DOUBLE PRECISION)"""
-                cursor.execute(create_tb_query)
-
+                cursor.execute(sql_create_tb_query)
         finally:
             self.connection.close()
 
@@ -46,23 +45,29 @@ class DB:
         try:
             with self.connection.cursor() as cursor:
                 self.connection.autocommit = True
-                insert_data_query = """INSERT INTO tbl_with_tests (duration, brh_opn, brh_cls, before_time, status, time_after_start,
-                akb_voltage, press, tank_temp, engine_wall_temp, valve_temp,
+                sql_insert_data_query = """INSERT INTO tbl_with_tests (duration, brh_opn, brh_cls, before_time, status, time_after_start,
+                akb_voltage, pressure, tank_temp, engine_wall_temp, valve_temp,
                 valve_current, heating_current) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
-                cursor.execute(insert_data_query, (duration, brh_opn, brh_cls, before_time, status,
+                cursor.execute(sql_insert_data_query, (duration, brh_opn, brh_cls, before_time, status,
                             time_after_start, akb_voltage, press, tank_temp, engine_wall_temp,
                             valve_temp, valve_current, heating_current))
-
         finally:
             self.connection.close()
 
     
-    def update_data(self):
+    def update_data(self, test_id, duration, brh_opn, brh_cls, before_time, status,
+                time_after_start, akb_voltage, press, tank_temp, engine_wall_temp,
+                valve_temp, valve_current, heating_current):
         self.DB_connect()
         try:
             with self.connection.cursor() as cursor:
-                cursor.autocommit = True
-            # код апдейта данных
+                self.connection.autocommit = True
+                sql_update_data_query = """UPDATE tests SET duration = %s, brh_open = %s, brh_cls = %s, before_time = %s,
+                status = %s, time_after_start = %s, akb_voltage = %s, press = %s, tank_temp = %s, engine_wall_temp = %s,
+                valve_temp = %s, valve_current = %s, heating_current = %s WHERE test_id = %s"""
+                cursor.execute(sql_update_data_query, (duration, brh_opn, brh_cls, before_time, status,
+                                 time_after_start, akb_voltage, press, tank_temp, engine_wall_temp,
+                                 valve_temp, valve_current, heating_current, test_id))
         finally:
             self.connection.close()
 
@@ -71,7 +76,7 @@ class DB:
         self.DB_connect()
         try:
             with self.connection.cursor() as cursor:
-                cursor.autocommit = True
-            # экспорт джсон пакета по идентификатору
+                self.connection.autocommit = True
+            
         finally:
             self.connection.close()
