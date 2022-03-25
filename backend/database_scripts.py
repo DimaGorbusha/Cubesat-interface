@@ -4,8 +4,8 @@ import psycopg2
 class DB:
     def DB_connect(self):
         self.connection = psycopg2.connect(dbname='database', 
-                                    user='db_user', 
-                                    password='mypassword',
+                                    user='postgres', 
+                                    password='$NS$//1907',
                                     host='localhost')
 
 
@@ -18,12 +18,22 @@ class DB:
         try:
             with self.connection.cursor() as cursor:
                 cursor.autocommit = True
-                cursor.execute("CREATE TABLE IF NOT EXISTS tests \
-                (test_id SMALLINT AUTO_INCREMENT PRIMARY KEY, \
-                duration SMALLINT, brh_opn SMALLINT, brh_cls SMALLINT, \
-                before_time INT, status BOOLEAN, time_after_start SMALLINT, \
-                akb_voltage DOUBLE, pressure DOUBLE, tank_temp DOUBLE, engine_wall_temp DOUBLE, \
-                valve_temp DOUBLE, valve_current DOUBLE, heating_current DOUBLE)")
+                create_tb_query = """CREATE TABLE IF NOT EXISTS test_tbl (
+                    test_id BIGSERIAL PRIMARY KEY,
+                    duration INTEGER, 
+                    brh_opn INTEGER, 
+                    brh_cls INTEGER, 
+                    before_time INTEGER, 
+                    status BOOLEAN, 
+                    time_after_start INTEGER, 
+                    akb_voltage DOUBLE PRECISION, 
+                    pressure DOUBLE PRECISION, 
+                    tank_temp DOUBLE PRECISION, 
+                    engine_wall_temp DOUBLE PRECISION, 
+                    valve_temp DOUBLE PRECISION, 
+                    valve_current DOUBLE PRECISION, 
+                    heating_current DOUBLE PRECISION)"""
+                cursor.execute(create_tb_query)
 
         finally:
             self.connection.close()
