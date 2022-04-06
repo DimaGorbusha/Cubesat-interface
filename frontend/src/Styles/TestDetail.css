@@ -59,4 +59,14 @@
         margin-top: 50px;
         margin-left: 20px;
     }
+    .btns_control_test{
+        display: block;
+        text-align: center;
+    }
+    .btn_sign1 {
+        margin-right: auto;
+    }
+    .btn_sign {
+        margin-left: auto;
+    }
 }

@@ -36,9 +36,9 @@ export const TestDetail = () => {
                         <h4>Время предпускового нагрева</h4>
                         <h4>Период импульсного режима работы</h4>
                     </div>
-                    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                        <Button id="btn_sign" className="btn_sign" class="btn_sign" style={{ width: 'fit-content', borderRadius: '20px', paddingLeft: '50px', paddingRight: '50px', fontFamily: 'Montserrat-Medium', backgroundColor: '#FF4D00', borderColor: 'white', outline: 'none' }} primary as="input" type="button" value="Старт" />
-                        <Button id="btn_sign1" className="btn_sign1" class="btn_sign" style={{ marginLeft: 'auto', width: 'fit-content', paddingLeft: '50px', paddingRight: '50px', borderRadius: '20px', fontFamily: 'Montserrat-Medium', borderColor: '#FF4D00' }} primary outline as="input" type="button" value="Скачать лог" />
+                    <div className="btns_control_test" style={{ display: 'flex', flexWrap: 'wrap' }}>
+                        <Button id="btn_sign" className="btn_sign" class="btn_sign" style={{ width: 'fit-content', borderRadius: '20px', paddingLeft: '50px', paddingRight: '50px', fontFamily: 'Montserrat-Medium', backgroundColor: '#FF4D00', borderColor: 'white', outline: 'none', marginBottom:'10px' }} primary as="input" type="button" value="Старт" />
+                        <Button id="btn_sign1" className="btn_sign1" class="btn_sign" style={{ marginLeft: 'auto', width: 'fit-content', paddingLeft: '50px', paddingRight: '50px', borderRadius: '20px', fontFamily: 'Montserrat-Medium',marginBottom:'10px', borderColor: '#FF4D00' }} primary outline as="input" type="button" value="Скачать лог" />
                     </div>
                     <div>
                         <HighchartsReact
