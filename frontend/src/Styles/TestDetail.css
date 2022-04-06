@@ -37,14 +37,14 @@
 }
 
 @media(max-width: 600px) {
-    h4 {
+    .text_test_detail {
         font-size: medium;
         margin-right: auto;
         margin-left: 0px;
         width: min-content;
     }
 
-    h2 {
+    .head_test_detail {
         font-size: large;
     }
 
@@ -59,13 +59,16 @@
         margin-top: 50px;
         margin-left: 20px;
     }
-    .btns_control_test{
+
+    .btns_control_test {
         display: block;
         text-align: center;
     }
+
     .btn_sign1 {
         margin-right: auto;
     }
+
     .btn_sign {
         margin-left: auto;
     }
