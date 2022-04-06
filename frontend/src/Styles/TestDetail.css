@@ -4,7 +4,7 @@
     overflow: auto;
 }
 
-.test_detail_label{
+.test_detail_label {
     margin-top: 100px;
     margin-left: 50px;
 }
@@ -30,19 +30,33 @@
     color: white;
     background-color: #FF4D00;
 }
+
 .btn_sign1 {
     color: #FF4D00;
     margin-left: auto;
 }
 
-@media(max-width: 600px){
-    h4{
+@media(max-width: 600px) {
+    h4 {
         font-size: medium;
         margin-right: auto;
         margin-left: 0px;
         width: min-content;
     }
+
     h2 {
         font-size: large;
+    }
+
+    .test_container {
+        width: -webkit-fill-available;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .test_detail_label {
+        margin-top: 50px;
+        margin-left: 20px;
     }
 }
