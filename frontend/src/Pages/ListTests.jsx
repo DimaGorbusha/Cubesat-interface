@@ -10,7 +10,7 @@ export const ListTests = () => {
                     <h2 style={{ fontFamily: 'Montserrat-Bold' }}>Вы в режиме <h2 style={{ color: '#FF4D00' }}>инженера-испытателя</h2></h2>
                     <p>Вы имеете право управлять, создавать и редактировать испытания</p>
                 </div>
-                <Button id="btn_sign" className="btn_sign" class="btn_sign" style={{width:'max-content', paddingLeft:'50px',paddingRight:'50px',marginLeft:'auto',height:'fit-content', borderRadius:'20px', fontFamily:'Montserrat-Medium', backgroundColor:'#FF4D00', borderColor:'white', outline:'none'}} primary as="input" type="button" value="Создать тест" />
+                <Button id="btn_sign" className="btn_sign" class="btn_sign" style={{ width: 'max-content', paddingLeft: '50px', paddingRight: '50px', marginLeft: 'auto', height: 'fit-content', borderRadius: '20px', fontFamily: 'Montserrat-Medium', backgroundColor: '#FF4D00', borderColor: 'white', outline: 'none' }} primary as="input" type="button" value="Создать тест" />
 
 
             </div>

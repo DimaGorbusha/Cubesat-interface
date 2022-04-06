@@ -12,7 +12,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<SignUp />} />
                 <Route path='/list-tests' element={<ListTests />} />
-                <Route path='/test-detail/:test_id' element={<TestDetail />} />
+                <Route path='/test-detail' element={<TestDetail />} />
                 <Route path='/create-test' element={<CreateTest />} />
             </Routes>
         </Router>
