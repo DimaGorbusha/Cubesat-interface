@@ -1,0 +1,22 @@
+.content {
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+h3 {
+    font-family: 'Montserrat-Bold';
+    color: #FF4D00;
+    
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.preset_test{
+    margin-top: 20px;
+    display: flex;
+    max-width: 500px;
+    flex-wrap: wrap;
+}
