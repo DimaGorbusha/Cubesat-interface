@@ -1,0 +1,32 @@
+*{
+    font-family: 'Montserrat-Regular';
+}
+
+.content{
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+
+h2 {
+    max-width: 500px;
+}
+
+.labels{
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+p {
+    text-decoration: none;
+}
+
+@media(max-width:900px){
+    .btn_sign{
+        margin-right: auto;
+        margin-left: 0px;
+    }
+}
